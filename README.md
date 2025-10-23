@@ -1,1 +1,1 @@
-Belajar HTML #1
+Learn: HTML, CSS.
