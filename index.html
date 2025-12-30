@@ -1,110 +1,290 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kali Linux Style</title>
-    <style>
-        body {
-            background-color: #000000;
-            color: #00ff00;
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adrenaline_404 • Kali Style Project</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            border: 1px solid #ff0000;
-            padding: 20px;
-        }
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --terminal: #141414;
+      --green: #00ff9d;
+      --red: #ff2e63;
+      --gray: #4a4a4a;
+      --light-gray: #a0a0a0;
+      --glow: rgba(0, 255, 157, 0.25);
+    }
 
-        h1, h2, h3 {
-            color: #ff0000;
-            border-bottom: 1px solid #333333;
-            padding-bottom: 5px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        a {
-            color: #00ff00;
-            text-decoration: none;
-        }
+    body {
+      background: var(--bg);
+      color: var(--green);
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0,255,157,0.08) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255,46,99,0.06) 0%, transparent 30%);
+    }
 
-        a:hover {
-            background-color: #ff0000;
-            color: #000000;
-        }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      border: 1px solid var(--gray);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0, 255, 157, 0.1);
+    }
 
-        ul {
-            list-style-type: "> ";
-            padding-left: 20px;
-        }
+    .header {
+      background: linear-gradient(180deg, #1a1a1a, #111);
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid var(--gray);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
 
-        ol {
-            list-style-type: decimal-leading-zero;
-            color: #ff0000;
-        }
+    .nav a {
+      color: var(--light-gray);
+      text-decoration: none;
+      margin-right: 1.8rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
 
-        .terminal {
-            background-color: #1a1a1a;
-            padding: 15px;
-            border: 1px solid #ff0000;
-            margin: 10px 0;
-        }
+    .nav a:hover {
+      color: var(--green);
+      text-shadow: 0 0 8px var(--glow);
+    }
 
-        .menu-bar {
-            background-color: #1a1a1a;
-            padding: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            gap: 20px;
-        }
-    </style>
+    .main-content {
+      padding: 2.5rem;
+    }
+
+    .glitch-heading {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 700;
+      color: var(--green);
+      text-shadow: 
+        0 0 10px var(--glow),
+        0 0 20px var(--glow);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      animation: glitch 4s infinite alternate;
+    }
+
+    .glitch-heading::before,
+    .glitch-heading::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+    }
+
+    .glitch-heading::before {
+      left: 2px;
+      text-shadow: -2px 0 var(--red);
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch-anim 2s infinite linear alternate-reverse;
+    }
+
+    .glitch-heading::after {
+      left: -2px;
+      text-shadow: 2px 0 var(--red);
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch-anim2 3s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(-3px, 2px); }
+      40% { transform: translate(3px, -2px); }
+      60% { transform: translate(-2px, 1px); }
+      80% { transform: translate(2px, -1px); }
+    }
+
+    @keyframes glitch-anim {
+      0% { clip: rect(30px, 9999px, 60px, 0); }
+      20% { clip: rect(80px, 9999px, 120px, 0); }
+      40% { clip: rect(10px, 9999px, 90px, 0); }
+      60% { clip: rect(50px, 9999px, 140px, 0); }
+      80% { clip: rect(20px, 9999px, 70px, 0); }
+      100% { clip: rect(60px, 9999px, 110px, 0); }
+    }
+
+    @keyframes glitch-anim2 {
+      0% { clip: rect(40px, 9999px, 80px, 0); }
+      30% { clip: rect(10px, 9999px, 100px, 0); }
+      50% { clip: rect(70px, 9999px, 130px, 0); }
+      70% { clip: rect(20px, 9999px, 60px, 0); }
+      100% { clip: rect(50px, 9999px, 90px, 0); }
+    }
+
+    .terminal-line {
+      background: var(--terminal);
+      border-left: 4px solid var(--red);
+      padding: 1rem 1.2rem;
+      margin: 1.2rem 0;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .terminal-line::before {
+      content: "root@adrenaline:~# ";
+      color: var(--red);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .typing {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid var(--green);
+      animation: 
+        typing 3.5s steps(42) forwards,
+        blink-caret 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: var(--green); }
+    }
+
+    h2, h3 {
+      color: var(--red);
+      margin: 2rem 0 1rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1.5rem;
+    }
+
+    ul li {
+      position: relative;
+      margin-bottom: 0.8rem;
+    }
+
+    ul li::before {
+      content: "→";
+      color: var(--red);
+      position: absolute;
+      left: -1.5rem;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border-bottom: 1px dotted var(--gray);
+    }
+
+    a:hover {
+      color: white;
+      text-shadow: 0 0 10px var(--green);
+      border-bottom-color: var(--green);
+    }
+
+    .status {
+      margin-top: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--light-gray);
+    }
+
+    .online-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--green);
+      animation: pulse 2s infinite;
+      margin-left: 0.6rem;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,157,0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(0,255,157,0); }
+    }
+
+    @media (max-width: 600px) {
+      .main-content { padding: 1.5rem; }
+      .header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="menu-bar">
-        <a href="#home">Home</a>
-        <a href="#docs">Documentation</a>
+
+<div class="container">
+  <div class="header">
+    <div class="nav">
+      <a href="#home">Home</a>
+      <a href="#tools">Tools</a>
+      <a href="#docs">Docs</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h1 class="glitch-heading" data-text="root@kali:~# Welcome to Adrenaline_404">root@kali:~# Welcome to Adrenaline_404</h1>
+
+    <div class="terminal-line">
+      <span class="typing">// Security is a process, not a product... Initializing protocols</span>
     </div>
 
-    <div class="container">
-        <!-- Heading -->
-        <h1>root@kali:~# Welcome to Project Adrenaline_404 (╯° □°） </h1>
-        
-        <!-- Paragraf -->
-        <div class="terminal">
-            <p>// Security is a process, not a product</p>
-            <p>// Initializing system protocols...</p>
-        </div>
+    <h2>Available Tools for Xiaomi SM6225</h2>
+    <ul>
+      <li>Disable Thermal v2 → Magisk module to remove thermal control limitations on Snapdragon 685 SoC</li>
+      <li>PUBGM Priority → Renice script focused on optimal resource allocation for PUBG Mobile</li>
+      <li>XGT685 v2.0 → Extreme performance Magisk module for heavy gaming & testing</li>
+    </ul>
 
-        <!-- List -->
-        <h2>Available Tools for Xiaomi SM6225:</h2>
-        <ul>
-            <li>Disable Thermal v2 = magisk module to remove thermal control limitations on devices with Snapdragon 685 SoC</li>
-            <li>PUBGM Priority = Renice script for 1 game (pubg mobile) focuses resource allocation for 1 game more optimally</li>
-            <li>XGT685 v2.0 = magisk module focuses on improving overall extreme performance for heavy gaming testing</li>
-        </ul>
+    <h3>Project Xiaomi SM6225</h3>
+    <ul>
+      <li><a href="https://t.me/nebula_369/69" target="_blank" rel="noopener">Disable Thermal v2</a></li>
+      <li><a href="https://t.me/nebula_369/80" target="_blank" rel="noopener">PUBGM Priority</a></li>
+      <li><a href="https://t.me/nebula_369/85" target="_blank" rel="noopener">XGT685 v2.0</a></li>
+    </ul>
 
-        <!-- Link -->
-        <h3>Project Xiaomi SM6225:</h3>
-        <ol>
-            <li><a href="https://t.me/nebula_369/69" target="_blank">Disable Thermal v2</a></li>
-            <li><a href="https://t.me/nebula_369/80" target="_blank">PUBGM Priority</a></li>
-            <li><a href="https://t.me/nebula_369/85" target="_blank">XGT685 v2.0</a></li>
-        </ol>
-        
-        <h3>Docs:</h3>
-        <ol>
-            <li><a href="https://source.android.com/?hl=id" target="_blank">Android Open Source</a></li>
-            <li><a href="https://github.com/topjohnwu/magisk/releases" target="_blank">Magisk</a></li>
-            <li><a href="https://github.com/Xiaomi-SD685-Devs" target="_blank">Xiaomi-SD685-Devs</a></li>
-        </ol>
+    <h3>Documentation & Resources</h3>
+    <ul>
+      <li><a href="https://source.android.com/?hl=id" target="_blank" rel="noopener">Android Open Source Project</a></li>
+      <li><a href="https://github.com/topjohnwu/magisk/releases" target="_blank" rel="noopener">Magisk Official Releases</a></li>
+      <li><a href="https://github.com/Xiaomi-SD685-Devs" target="_blank" rel="noopener">Xiaomi SD685 Developers</a></li>
+    </ul>
 
-        <div class="terminal">
-            <p>root@kali:~# <a href="https://t.me/nebula_369" target="_blank">@adrenaline_404</a></p>
-            <p>Connection established: <span style="color:#ff0000">●</span> Online</p>
-        </div>
+    <div class="terminal-line status">
+      root@kali:~# <a href="https://t.me/nebula_369" target="_blank" rel="noopener">@adrenaline_404</a>
+      Connection established: <span class="online-dot"></span> Online
     </div>
+  </div>
+</div>
+
 </body>
 </html>
