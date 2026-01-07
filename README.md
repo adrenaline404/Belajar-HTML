@@ -1,7 +1,7 @@
 # Adrenaline_404 Showcase  
 Xiaomi SM6225 / Snapdragon 685 Tools
 
-Halaman statis ini adalah showcase sederhana yang menampilkan **tiga tools performa untuk perangkat Xiaomi/POCO/Redmi berbasis Snapdragon 685 (SM6225)** yang saya buat sendiri.
+Halaman statis ini adalah showcase sederhana yang menampilkan **tiga tools performa untuk perangkat Xiaomi/POCO/Redmi berbasis Snapdragon 685 (SM6225)**
 
 ### Cara Melihat Showcase
 
@@ -39,5 +39,4 @@ Semua tools dapat diunduh melalui channel Telegram saya:
 
 ---
 
-Dibuat & dikembangkan oleh [@adrenaline404](https://github.com/adrenaline404)  
-December 2025
+Dibuat & dikembangkan oleh [@adrenaline404](https://github.com/adrenaline404)
